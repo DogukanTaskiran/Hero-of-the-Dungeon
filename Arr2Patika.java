@@ -32,7 +32,6 @@ import java.util.Scanner;
                 System.out.println("En Yakın Büyük Sayı: " + max);
 
                 System.out.println("Hello World!")
-            }
-            
+                        
+               }
         }
-
