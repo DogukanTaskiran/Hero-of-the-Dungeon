@@ -2,24 +2,45 @@ package CannonFodder;
 
 import java.util.ArrayList;
 public class AllyBaseClasses extends BaseClasses {
-    private ArrayList<Items> equipment;
+    private Items[] equipment;
+    private ArrayList<Items> inventory;
     Items items=new Items();
+    Weapons weapons=new Weapons() {
+        @Override
+        public void itemInfo() {
+            super.itemInfo();
+        }
+    };
+    Armor armors=new Armor() {
+        @Override
+        public void itemInfo() {
+            super.itemInfo();
+        }
+    };
 
-    public void setEquipment(ArrayList<Items> equipment) {
+    public void setInventory(ArrayList<Items> inventory) {
+        this.inventory = inventory;
+    }
+
+    public ArrayList<Items> getInventory() {return inventory;}
+
+    public void setEquipment(Items[] equipment) {
         this.equipment = equipment;
     }
 
-    public ArrayList<Items> getEquipment() {return equipment;}
+    public Items[] getEquipment() {return equipment;}
 
     public AllyBaseClasses(){
         super();
-        this.equipment=new ArrayList<Items>();
+        this.equipment=new Items[2];
+        this.inventory=new ArrayList<Items>();
     }
 
     public AllyBaseClasses(String name, long hp, int strength, int vitality, int intelligence,
-                           ArrayList<Items> equipment){
+                           Items[] equipment, ArrayList<Items> inventory){
         super(name, hp, strength, vitality, intelligence);
         this.equipment=equipment;
+        this.inventory=inventory;
     }
 
     @Override
@@ -32,9 +53,26 @@ public class AllyBaseClasses extends BaseClasses {
     }
 
     public void Pick(){
-        System.out.println(getName()+ "picked up " + items.getName());
-        equipment.add(items);
+        System.out.println(getName()+ " picked up " + items.getName());
+        inventory.add(items);
     }
 
-    public
+    public void wield(){
+        System.out.println(getName()+ " wields " + weapons.getName());
+        this.equipment[0]=weapons;
+    }
+
+    public void wear(){
+        System.out.println(getName() + " wears " + armors.getName());
+        this.equipment[1]=armors;
+    }
+
+    public void examine(){
+        System.out.println(items);
+    }
+
+    public void listInventory(){
+        System.out.println(inventory);
+        System.out.println(equipment);
+    }
 }
