@@ -16,7 +16,7 @@ public class Wand extends Weapon {
         super.setName(name);
         super.setValue(value);
         super.setWeight(weight);
-        super.setDamage(damage * 2); // 2 yerine Intelligence gelecek.
+        super.setDamage(damage * intelligence); // 2 yerine Intelligence gelecek.
         this.setHeal(heal);
     }
 
