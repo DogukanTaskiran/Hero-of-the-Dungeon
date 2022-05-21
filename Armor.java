@@ -1,5 +1,10 @@
 public class Armor extends Items{
     private double resistance;
+    public Armor(String name,double weight,double value,double resistance){
+        super(name,weight,value);
+        this.resistance=resistance;
+    }
+
 
     public double getResistance() {
         return resistance;
@@ -9,17 +14,10 @@ public class Armor extends Items{
         this.resistance = resistance;
     }
 
-    public Armor(String name, double value, double weight, double damage,double resistance){
-        super.setName(name);
-        super.setValue(value);
-        super.setWeight(weight);
-        this.setResistance(resistance);
-    }
     @Override
     public void ItemInfo() {
-        System.out.println("\nName: " + getName());
-        System.out.println("Weight: " + getWeight());
-        System.out.println("Value: " + getValue());
-        System.out.println("Resistance: " + getResistance());
+        super.ItemInfo();
+        System.out.println("Resistance: "+getResistance());
     }
 }
+
