@@ -2,7 +2,7 @@ package CannonFodder;
 
 import java.util.ArrayList;
 public class AllyBaseClasses extends BaseClasses {
-    private Items[] equipment;
+    protected Items[] equipment=new Items[2];
     private ArrayList<Items> inventory;
     Items items=new Items();
     Weapons weapons=new Weapons() {
@@ -17,6 +17,7 @@ public class AllyBaseClasses extends BaseClasses {
             super.itemInfo();
         }
     };
+    private int attack;
 
     public void setInventory(ArrayList<Items> inventory) {
         this.inventory = inventory;
@@ -30,6 +31,14 @@ public class AllyBaseClasses extends BaseClasses {
 
     public Items[] getEquipment() {return equipment;}
 
+    public void setAttack(int attack) {
+        if (attack<0)
+            attack=0;
+        this.attack = attack;
+    }
+
+    public int getAttack() {return attack;}
+
     public AllyBaseClasses(){
         super();
         this.equipment=new Items[2];
@@ -37,9 +46,12 @@ public class AllyBaseClasses extends BaseClasses {
     }
 
     public AllyBaseClasses(String name, long hp, int strength, int vitality, int intelligence,
-                           Items[] equipment, ArrayList<Items> inventory){
+                           ArrayList<Items> inventory){
         super(name, hp, strength, vitality, intelligence);
-        this.equipment=equipment;
+        this.equipment[0]=new Items(weapons.name, weapons.rareLevel, weapons.rarity, weapons.attack, weapons.vitality,
+                weapons.intelligence, (int) weapons.weight, weapons.actionSpeed);
+        this.equipment[1]=new Items(armors.name, armors.rareLevel, armors.rarity, armors.attack, armors.vitality,
+                armors.intelligence, (int) armors.weight, armors.actionSpeed);
         this.inventory=inventory;
     }
 
@@ -52,7 +64,7 @@ public class AllyBaseClasses extends BaseClasses {
         System.out.println("Use a special action based on the class.");
     }
 
-    public void Pick(){
+    public void pick(){
         System.out.println(getName()+ " picked up " + items.getName());
         inventory.add(items);
     }
