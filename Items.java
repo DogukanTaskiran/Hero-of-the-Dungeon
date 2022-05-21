@@ -2,7 +2,12 @@ public class Items {
     private String name;
     private double value;
     private double weight;
-
+    
+public Items(String name, double weight, double value) {
+        this.name=name;
+        this.weight=weight;
+        this.value=value;
+}
     public String getName() {
         return name;
     }
