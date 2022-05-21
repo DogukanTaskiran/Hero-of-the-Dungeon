@@ -6,6 +6,9 @@ public class HeavyArmor extends Armor {
 
     @Override
     public void ItemInfo() {
-        super.ItemInfo();
+        System.out.println("Name: "+ getName());
+        System.out.println("Weight "+ getWeight());
+        System.out.println("Value: "+ getValue());
+        System.out.println("Resistance: "+getResistance()*2);
     }
 }
