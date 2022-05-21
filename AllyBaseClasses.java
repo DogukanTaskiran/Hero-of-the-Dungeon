@@ -5,7 +5,7 @@ public class AllyBaseClasses extends BaseClasses {
     protected Items[] equipment=new Items[2];
     private ArrayList<Items> inventory;
     Items items=new Items();
-    Weapons weapons=new Weapons() {
+    Weapon weapons=new Weapon() {
         @Override
         public void itemInfo() {
             super.itemInfo();
