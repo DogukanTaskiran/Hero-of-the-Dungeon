@@ -12,8 +12,9 @@ public class Level {
     ArrayList<EnemySoldiers> enemy=new ArrayList<EnemySoldiers>();
     public void levelN(){
         int i;
+        int counter=0;
 
-        for (i=0; i<Math.pow(2,i);i++){
+        for (i=counter; i<Math.pow(2,i);i++){
             EnemySoldiers enemySoldiers=new EnemySoldiers(1,(random.nextInt(5)+1),(random.nextInt(5)+1),(random.nextInt(5)+1));
             enemy.add(enemySoldiers);
             if (enemy.size()>Math.pow(2,i)){
@@ -22,6 +23,7 @@ public class Level {
         }
         System.out.println("Welcome to level" + i);
         System.out.println("You have "+ Math.pow(2,i)+" number of enemies to defeat.");
+        counter++;
     }
 
     public void enemiesDefeated(){
