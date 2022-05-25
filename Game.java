@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.security.SecureRandom;
 public class Game {
     SecureRandom random=new SecureRandom();
-    Location location = new Location();
+    Level level = new Level();
 
     public void login(){
         Scanner scanner = new Scanner(System.in);
@@ -30,6 +30,15 @@ public class Game {
         Healer support = new Healer("Support",1,(random.nextInt(5)+3),(random.nextInt(5)+1),(random.nextInt(5)+6),healer.getEquipment(), inventory);
         Tank tank = new Tank("Front line",1,(random.nextInt(5)+1),(random.nextInt(5)+6),(random.nextInt(5)+3),tank2.getEquipment(), inventory);
 
+        if(fighter.getHp()>Math.round((0.7*fighter.getVitality()) + (0.2*fighter.getStrength()) + (0.1*fighter.getIntelligence())))
+            fighter.setHp(Math.round((0.7*fighter.getVitality()) + (0.2*fighter.getStrength()) + (0.1*fighter.getIntelligence())));
+
+        if (support.getHp()>Math.round((0.7*support.getVitality()) + (0.2*support.getStrength()) + (0.1*support.getIntelligence())))
+            support.setHp(Math.round((0.7*support.getVitality()) + (0.2*support.getStrength()) + (0.1*support.getIntelligence())));
+
+        if (tank.getHp()>Math.round((0.7*tank.getVitality()) + (0.2*tank.getStrength()) + (0.1*tank.getIntelligence())))
+            tank.setHp(Math.round((0.7*tank.getVitality()) + (0.2*tank.getStrength()) + (0.1*tank.getIntelligence())));
+        
         System.out.println(fighter.getName()+" created with  -> Strength: "+ fighter.getStrength()+", HP: "+fighter.getHp()+", Vitality: "+fighter.getVitality()+
                 ", Intelligence: "+fighter.getIntelligence()+", Items: "+Arrays.toString(fighter.equipment)+", Inventory: "+ fighter.getInventory()+".");
         System.out.println(support.getName()+" created with -> Strength: "+ support.getStrength()+", HP: "+support.getHp()+", Vitality: "+support.getVitality()+
