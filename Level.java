@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.security.SecureRandom;
 public class Level {
     SecureRandom random=new SecureRandom();
@@ -8,11 +9,16 @@ public class Level {
     }
 
     public int getPoint() {return point;}
-
+    ArrayList<EnemySoldiers> enemy=new ArrayList<EnemySoldiers>();
     public void levelN(){
         int i;
-        for (i=0; i<Math.pow(2,0);i++){
-            EnemySoldiers enemy=new EnemySoldiers(1,(random.nextInt(5)+1),(random.nextInt(5)+1),(random.nextInt(5)+1));
+
+        for (i=0; i<Math.pow(2,i);i++){
+            EnemySoldiers enemySoldiers=new EnemySoldiers(1,(random.nextInt(5)+1),(random.nextInt(5)+1),(random.nextInt(5)+1));
+            enemy.add(enemySoldiers);
+            if (enemy.size()>Math.pow(2,i)){
+                enemy.remove(enemySoldiers);
+            }
         }
         System.out.println("Welcome to level" + i);
         System.out.println("You have "+ Math.pow(2,i)+" number of enemies to defeat.");
