@@ -3,6 +3,7 @@ import java.security.SecureRandom;
 public class Level {
     SecureRandom random=new SecureRandom();
     private int point=0;
+    public int i;
 
     public void setPoint(int point){
         this.point=point;
@@ -11,9 +12,7 @@ public class Level {
     public int getPoint() {return point;}
     ArrayList<EnemySoldiers> enemy=new ArrayList<EnemySoldiers>();
     public void levelN(){
-        int i;
         int counter=0;
-
         for (i=counter; i<Math.pow(2,i);i++){
             EnemySoldiers enemySoldiers=new EnemySoldiers(1,(random.nextInt(5)+1),(random.nextInt(5)+1),(random.nextInt(5)+1));
             enemy.add(enemySoldiers);
@@ -27,9 +26,9 @@ public class Level {
     }
 
     public void enemiesDefeated(){
-        int a=0;
-        System.out.println("You finished level "+ a +"On to next level");
-        setPoint((int) Math.pow(2,a));
-        a++;
+
+        System.out.println("You finished level "+ i +"On to next level");
+        setPoint((int) Math.pow(2,i));
+        i++;
     }
 }
