@@ -1,14 +1,14 @@
-public class MediumArmor extends Armor{
+public class MediumArmor extends Armor {
 
-    public MediumArmor(String name, double value, double weight, double damage, double resistance) {
-        super(name, value, weight, damage, resistance);
+    public MediumArmor(String name, String type, double weight, double value) {
+        super(name, type, weight, value);
     }
 
     @Override
-    public void ItemInfo() {
-        System.out.println("Name: "+ getName());
-        System.out.println("Weight "+ getWeight());
-        System.out.println("Value: "+ getValue());
-        System.out.println("Resistance: "+getResistance()*1.5);
+    public void itemInfo() {
+        print.printCyan("\nName: " + getName());
+        print.printCyan("Weight: " + getWeight());
+        print.printCyan("Value: " + getValue());
+        print.printCyan("Resistance: " + getResistance());
     }
 }

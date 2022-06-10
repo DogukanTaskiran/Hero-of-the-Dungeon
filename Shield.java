@@ -1,11 +1,6 @@
 public class Shield extends Weapon {
 
     private double block;
-
-    public Shield(String name, double weight, double value, double damage) {
-        super(name, weight, value, damage);
-    }
-
     public void setBlock(double block) {
 
         this.block = block;
@@ -16,24 +11,19 @@ public class Shield extends Weapon {
         return block;
     }
 
-    public Shield(String name, double value, double weight, double damage, double block) {
-        super.setName(name);
-        super.setValue(value);
-        super.setWeight(weight);
-        super.setDamage(damage * 2); // 2 yerine Vitality gelecek.
-        this.setBlock(block);
-    }
-
-    public Shield(){
-
+    public Shield(String name, String type, double weight, double value, double block,int damage) {
+        super(name, type, weight, value);
+        this.block = block;
+        setDamage(damage);
     }
 
     @Override
-    public void ItemInfo() {
-        System.out.println("\nName: " + getName());
-        System.out.println("Weight: " + getWeight());
-        System.out.println("Value: " + getValue());
-        System.out.println("Damage: " + getDamage());
-        System.out.println("Parry: " + getBlock());
+    public void itemInfo() {
+        print.printCyan("Name: " + getName());
+        print.printCyan("Weight: " + getWeight());
+        print.printCyan("Value: " + getValue());
+        print.printCyan("Damage: " + getDamage());
+        print.printCyan("Block: " + getBlock());
     }
+
 }

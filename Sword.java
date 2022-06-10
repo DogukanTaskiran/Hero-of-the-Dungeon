@@ -12,24 +12,19 @@ public class Sword extends Weapon {
         return parry;
     }
 
-    public Sword(String name, double value, double weight, double damage, double parry) {
-        super.setName(name);
-        super.setValue(value);
-        super.setWeight(weight);
-        super.setDamage(damage * 2); // 2 yerine Strength gelecek.
-        this.setParry(parry);
-    }
-
-    public Sword(){
-
+    public Sword(String name, String type, double weight, double value, double parry, int damage) {
+        super(name, type, weight, value);
+        this.parry = parry;
+        setDamage(damage);
     }
 
     @Override
-    public void ItemInfo() {
-        System.out.println("\nName: " + getName());
-        System.out.println("Weight: " + getWeight());
-        System.out.println("Value: " + getValue());
-        System.out.println("Damage: " + getDamage());
-        System.out.println("Parry: " + getParry());
+    public void itemInfo() {
+        print.printCyan("Name: " + getName());
+        print.printCyan("Weight: " + getWeight());
+        print.printCyan("Value: " + getValue());
+        print.printCyan("Damage: " + getDamage());
+        print.printCyan("Parry: " + getParry());
     }
+
 }

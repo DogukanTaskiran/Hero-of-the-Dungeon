@@ -1,14 +1,14 @@
 public class HeavyArmor extends Armor {
-    public HeavyArmor(String name,double weight,double value,double damage,double resistance){
-        super(name, weight, value, damage,resistance);
 
+    public HeavyArmor(String name, String type, double weight, double value) {
+        super(name, type, weight, value);
     }
 
     @Override
-    public void ItemInfo() {
-        System.out.println("Name: "+ getName());
-        System.out.println("Weight "+ getWeight());
-        System.out.println("Value: "+ getValue());
-        System.out.println("Resistance: "+getResistance()*2);
+    public void itemInfo() {
+        print.printCyan("\nName: " +getName());
+        print.printCyan("Weight: " + getWeight());
+        print.printCyan("Value: " + getValue());
+        print.printCyan("Resistance: " + getResistance());
     }
 }

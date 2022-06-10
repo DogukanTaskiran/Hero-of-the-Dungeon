@@ -1,14 +1,26 @@
 public class Items {
+    Print print = new Print();
+
     private String name;
     private double value;
     private double weight;
+    private double damage;
+    private String type;
 
-    public Items(String name, double weight, double value) {
-
+    public double getDamage() {
+        return damage;
     }
 
-    public Items(){
+    public void setDamage(double damage) {
+        this.damage = damage;
+    }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getName() {
@@ -35,9 +47,16 @@ public class Items {
         this.weight = weight;
     }
 
-    public void ItemInfo(){
-        System.out.println("\nName: " + getName());
-        System.out.println("Weight: "+getWeight());
-        System.out.println("Value: "+getValue());
+    public Items(String name, String type,double weight, double value) {
+        this.name=name;
+        this.type = type;
+        this.weight=weight;
+        this.value=value;
+    }
+
+    public void itemInfo() {
+        print.printCyan("Name: " + getName());
+        print.printCyan("Weight: " + getWeight());
+        print.printCyan("Value: " + getValue());
     }
 }

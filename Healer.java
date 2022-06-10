@@ -1,85 +1,41 @@
-import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class Healer extends Alliance {
-    SecureRandom random=new SecureRandom();
-    SecureRandom randomStat=new SecureRandom();
+public class Healer extends Creature {
 
-    Sword swords = new Sword();
-    Items items = new Items();
-    Weapon weapons = new Weapon();
-    Shield shield = new Shield();
-    Armor armor = new Armor();
-    Wand wand = new Wand();
 
-    Sword sword = new Sword(items.getName(), items.getWeight(), items.getValue(), weapons.getDamage(), swords.getParry());
-    Shield shields = new Shield(items.getName(), items.getValue(), items.getWeight(), weapons.getDamage(), shield.getBlock());
-    Wand wands = new Wand(items.getName(), items.getWeight(), items.getValue(), weapons.getDamage(), wand.getHeal());
+    Scanner input=new Scanner(System.in);
+    Print print = new Print();
 
-    Armor armor1 =new Armor();
 
-    LightArmor lightArmor = new LightArmor(items.getName(), items.getValue(), items.getWeight(), armor.getDamage(), armor.getResistance());
-    MediumArmor mediumArmor=new MediumArmor(items.getName(), items.getValue(), items.getWeight(), armor.getDamage(), armor.getResistance());
-    HeavyArmor heavyArmor = new HeavyArmor(items.getName(), items.getValue(), items.getWeight(), armor.getDamage(), armor.getResistance());
 
-    public int hWeapon;
+    public Healer() {
+        super("Healer");
+    }
 
-    public Healer(String name, long hp, int strength, int vitality, int intelligence, Items[] equipment,
-                  ArrayList<Items> inventory){
-        super.setName(name);
-        super.setHp(Math.round((0.7*vitality) + (0.2*strength) + (0.1*intelligence)));
-        super.setStrength(randomStat.nextInt(5)+3);
-        super.setVitality(randomStat.nextInt(5)+1);
-        super.setIntelligence(randomStat.nextInt(5)+6);
-        hWeapon=random.nextInt(9);
-        if (hWeapon<7){
-            super.equipment[0]=wands;
-            super.equipment[1]=lightArmor;
+    @Override
+    public void displayMenu() {
+        super.displayMenu();
+    }
+
+    @Override
+    public void attack() {
+        super.attack();
+    }
+
+    @Override
+    public void ability() {
+        print.printYellow("Casting "+getCharacterType()+" on "+getTarget().getName());
+        if(getAllyBase().getHp()>(getAllyBase().getHealthy()-10)){
+            getAllyBase().setHp(getHealthy());
+            print.printYellow("Current health of " + getAllyBase().getCharacterType() + " is " + getAllyBase().getHp());
         }
-        if (hWeapon==7){
-            super.equipment[0]=swords;
-            super.equipment[1]=lightArmor;
+        else
+        {getAllyBase().setHp(getHp() +10);
+            print.printYellow("Current health of " + getAllyBase().getCharacterType() + " is " + getAllyBase().getHp());
         }
-        if (hWeapon==8){
-            super.equipment[0]=wands;
-            super.equipment[1]=lightArmor;
-        }
-        super.setInventory(inventory);
-    }
 
-    @Override
-    public void attack(){
-        setAttack(super.getIntelligence());
-        System.out.println("Dealt " + getAttack() + " damage.");
-    }
 
-    @Override
-    public void specialAction(){
-        System.out.println("Healed a character.");
-    }
 
-    @Override
-    public void pick(){
-        super.pick();
-    }
-
-    @Override
-    public void wield(){
-        super.wield();
-    }
-
-    @Override
-    public void wear(){
-        super.wear();
-    }
-
-    @Override
-    public void examine(){
-        super.examine();
-    }
-
-    @Override
-    public void listInventory(){
-        super.listInventory();
     }
 }
