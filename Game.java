@@ -117,7 +117,6 @@ public class Game {
                     if (enemyArrayList.get(k).getHp() <= 0) {
                         print.printBlue("You killed an Enemy!");
                         enemyArrayList.remove(k);
-
                         print.printBlue("Enemy dropped: ");
                         System.out.println(enemy.getWeapon().getName());
                         System.out.println(enemy.getArmor().getName());
@@ -136,6 +135,7 @@ public class Game {
                         print.printBlue("Enemy's hp is : " + enemyArrayList.get(k).getHp());
                         if (enemyArrayList.get(k).getHp() <= 0) {
                             print.printBlue("You killed an Enemy!");
+                            enemyArrayList.remove(k);
                             print.printBlue("Enemy dropped: ");
                             System.out.println(enemy.getWeapon().getName());
                             System.out.println(enemy.getArmor().getName());
@@ -154,6 +154,7 @@ public class Game {
                             print.printBlue("Enemy's hp is : " + enemyArrayList.get(k).getHp());
                             if (enemyArrayList.get(k).getHp() <= 0) {
                                 print.printBlue("You killed an Enemy!");
+                                enemyArrayList.remove(k);
                                 print.printBlue("Enemy dropped: ");
                                 System.out.println(enemy.getWeapon().getName());
                                 System.out.println(enemy.getArmor().getName());
@@ -236,6 +237,7 @@ public class Game {
 
                     if (enemyArrayList.get(k).getHp() <= 0) {
                         print.printBlue("You killed an Enemy!");
+                        enemyArrayList.remove(k);
                         print.printBlue("Enemy dropped: ");
                         System.out.println(enemy.getWeapon().getName());
                         System.out.println(enemy.getArmor().getName());
@@ -254,6 +256,7 @@ public class Game {
                         print.printBlue("Enemy's hp is : " + enemyArrayList.get(k).getHp());
                         if (enemyArrayList.get(k).getHp() <= 0) {
                             print.printBlue("You killed an Enemy!");
+                            enemyArrayList.remove(k);
                             print.printBlue("Enemy dropped: ");
                             System.out.println(enemy.getWeapon().getName());
                             System.out.println(enemy.getArmor().getName());
@@ -272,6 +275,7 @@ public class Game {
                             print.printBlue("Enemy's hp is : " + enemyArrayList.get(k).getHp());
                             if (enemyArrayList.get(k).getHp() <= 0) {
                                 print.printBlue("You killed an Enemy!");
+                                enemyArrayList.remove(k);
                                 print.printBlue("Enemy dropped: ");
                                 System.out.println(enemy.getWeapon().getName());
                                 System.out.println(enemy.getArmor().getName());
@@ -357,6 +361,7 @@ public class Game {
 
                     if (enemyArrayList.get(k).getHp() <= 0) {
                         print.printBlue("You killed an Enemy!");
+                        enemyArrayList.remove(k);
                         print.printBlue("Enemy dropped: ");
                         System.out.println(enemy.getWeapon().getName());
                         System.out.println(enemy.getArmor().getName());
@@ -375,6 +380,7 @@ public class Game {
                         print.printBlue("Enemy's hp is : " + enemyArrayList.get(k).getHp());
                         if (enemyArrayList.get(k).getHp() <= 0) {
                             print.printBlue("You killed an Enemy!");
+                            enemyArrayList.remove(k);
                             print.printBlue("Enemy dropped: ");
                             System.out.println(enemy.getWeapon().getName());
                             System.out.println(enemy.getArmor().getName());
@@ -456,6 +462,7 @@ public class Game {
 
                     if (enemyArrayList.get(k).getHp() <= 0) {
                         print.printBlue("You killed an Enemy!");
+                        enemyArrayList.remove(k);
                         print.printBlue("Enemy dropped: ");
                         System.out.println(enemy.getWeapon().getName());
                         System.out.println(enemy.getArmor().getName());
@@ -474,6 +481,7 @@ public class Game {
                         print.printBlue("Enemy's hp is : " + enemyArrayList.get(k).getHp());
                         if (enemyArrayList.get(k).getHp() <= 0) {
                             print.printBlue("You killed an Enemy!");
+                            enemyArrayList.remove(k);
                             print.printBlue("Enemy dropped: ");
                             System.out.println(enemy.getWeapon().getName());
                             System.out.println(enemy.getArmor().getName());
