@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Creature{
+public class Creature {
     private double strength;
     private double vitality;
     private double intelligence;
@@ -78,29 +78,30 @@ public class Creature{
         print.printYellow("Strength of " + getClass() + " is : " + getStrength());
         print.printYellow("Vitality of " + getClass() + " is : " + getVitality());
         print.printYellow("Intelligence of " + getClass() + " is : " + getIntelligence());
-        print.printYellow("HP of " + getClass() + " is : " + Math.round(0.7 * getVitality() + 0.2 * getStrength() + 0.1 * getIntelligence())+"\n");
+        print.printYellow("HP of " + getClass() + " is : " + Math.round(0.7 * getVitality() + 0.2 * getStrength() + 0.1 * getIntelligence()) + "\n");
     }
 
-    public void attack(Characters character, Creature creature){
-
-    }
-    public void attack(Creature creature, Characters character){
+    public void attack(Characters character, Creature creature) {
 
     }
 
-    public void pick(){
+    public void attack(Creature creature, Characters character) {
 
     }
 
-    public void wield(Weapon weapon){
+    public void pick() {
+
+    }
+
+    public void wield(Weapon weapon) {
         System.out.println(getInventory());
     }
 
-    public void wear(Armor armor){
+    public void wear(Armor armor) {
         System.out.println(getInventory());
     }
 
-    public void examine(){
+    public void examine() {
     }
 
 

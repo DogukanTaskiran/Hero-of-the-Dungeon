@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Fighter extends Characters {
 
-    Scanner input=new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
     Print print = new Print();
     Weapon weapon = new Weapon();
     Armor armor = new Armor();
@@ -44,31 +44,31 @@ public class Fighter extends Characters {
     }
 
     @Override
-    public void pick(){
+    public void pick() {
         getInventory().add(weapon);
         getInventory().add(armor);
     }
 
     @Override
-    public void wield(Weapon weapon){
+    public void wield(Weapon weapon) {
         super.wield(weapon);
         System.out.println("Choose a weapon to equip.");
-        choose=input.nextInt();
+        choose = input.nextInt();
         setWeapon((Weapon) getInventory().get(choose));
         super.getWeapon().itemInfo();
     }
 
     @Override
-    public void wear(Armor armor){
+    public void wear(Armor armor) {
         super.wear(armor);
         System.out.println("Choose an armor to equip.");
-        choose=input.nextInt();
+        choose = input.nextInt();
         setArmor((Armor) getInventory().get(choose));
         super.getArmor().itemInfo();
     }
 
     @Override
-    public void examine(){
+    public void examine() {
         System.out.println(getInventory());
     }
 }

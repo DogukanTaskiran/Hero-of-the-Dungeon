@@ -2,7 +2,7 @@ public class Wand extends Weapon {
 
     private double heal;
 
-    Healer healer=new Healer();
+    Healer healer = new Healer();
 
     public void setHeal(double heal) {
 

@@ -40,10 +40,5 @@ public class Print {
     public void printWhite(String string) {
         System.out.println(setColourWhite + string + resetColour);
     }
-    public void enemyDropsWeapon(Creature enemy){
-        System.out.println(setColourWhite+enemy.getWeapon().getName()+resetColour);
-    }
-    public void enemyDropArmor(Creature enemy){
-        System.out.println(setColourWhite+enemy.getArmor().getName()+resetColour);
-    }
+
 }

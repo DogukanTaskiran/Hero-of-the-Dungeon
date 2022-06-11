@@ -19,7 +19,7 @@ public abstract class Characters extends Creature {
         print.printYellow("Strength of " + getClass() + " is : " + getStrength());
         print.printYellow("Vitality of " + getClass() + " is : " + getVitality());
         print.printYellow("Intelligence of " + getClass() + " is : " + getIntelligence());
-        print.printYellow("HP of " + getClass() + " is : " + Math.round(0.7 * getVitality() + 0.2 * getStrength() + 0.1 * getIntelligence())+"\n");
+        print.printYellow("HP of " + getClass() + " is : " + Math.round(0.7 * getVitality() + 0.2 * getStrength() + 0.1 * getIntelligence()) + "\n");
     }
 
     public abstract void pick();

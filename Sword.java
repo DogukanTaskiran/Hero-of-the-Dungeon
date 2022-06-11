@@ -2,7 +2,7 @@ public class Sword extends Weapon {
 
     private double parry;
 
-    Fighter fighter=new Fighter();
+    Fighter fighter = new Fighter();
 
     public void setParry(double parry) {
 

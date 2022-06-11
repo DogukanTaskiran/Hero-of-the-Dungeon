@@ -4,7 +4,7 @@ public class Shield extends Weapon {
 
     private double block;
 
-    Tank tank=new Tank();
+    Tank tank = new Tank();
 
     public Shield(String name, double weight, double value, double damage) {
         super(name, weight, value, damage);

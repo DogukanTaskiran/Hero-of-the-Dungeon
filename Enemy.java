@@ -10,7 +10,7 @@ public class Enemy extends Creature {
 
     }
 
-    public Enemy(double strength, double vitality, double intelligence){
+    public Enemy(double strength, double vitality, double intelligence) {
         super.setStrength(strength);
         super.setVitality(vitality);
         super.setIntelligence(intelligence);
@@ -33,7 +33,7 @@ public class Enemy extends Creature {
         print.printBlack("**********************************************************");
     }
 
-    public void attack(Creature creature,Characters characters){
-        characters.setHp(getHp()-getStrength()*weapon.getDamage());
+    public void attack(Creature creature, Characters characters) {
+        characters.setHp(getHp() - getStrength() * weapon.getDamage());
     }
 }

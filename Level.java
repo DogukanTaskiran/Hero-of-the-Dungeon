@@ -27,7 +27,7 @@ public class Level {
 
         Enemy enemy = new Enemy((random.nextInt(5) + 1), (random.nextInt(5) + 1), (random.nextInt(5) + 1));
 
-        print.printPurple("\n********* Welcome to level " + n +" *********");
+        print.printPurple("\n********* Welcome to level " + n + " *********");
 
         for (level = 0; level <= Math.pow(2, n); level++) {
             enemyArrayList.add(enemy);
@@ -36,7 +36,7 @@ public class Level {
             }
         }
         print.printPurple("You have " + (int) Math.pow(2, n) + " number of enemies to defeat.");
-        for(Creature enemies: enemyArrayList) {
+        for (Creature enemies : enemyArrayList) {
             enemies.displayMenu();
         }
         score = score + Math.pow(2, n);
@@ -54,8 +54,8 @@ public class Level {
         print.printGreen("Your score is: " + score);
         File scores = new File("C:\\Intellij_IDEA\\SE116_o");
 
-        for(int d=0;d<5;d++){
-            if (topScores.get(d)<score){
+        for (int d = 0; d < 5; d++) {
+            if (topScores.get(d) < score) {
                 topScores.add(score);
                 topScores.remove(d);
             }
