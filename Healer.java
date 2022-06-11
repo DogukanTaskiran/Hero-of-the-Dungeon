@@ -39,7 +39,7 @@ public class Healer extends Characters {
         creature.setHp(getHp() - healer.getIntelligence() * weapon.getDamage());
     }
 
-    public void specialAttackHeal(Healer healer, Tank tank, Fighter fighter, Wand wand) {
+    public void specialAttackHeal(Characters healer, Characters tank, Characters fighter, Wand wand) {
         tank.setHp(wand.getHeal() + tank.getHp());
         fighter.setHp(wand.getHeal() + fighter.getHp());
         healer.setHp(wand.getHeal() + healer.getHp());

@@ -34,7 +34,7 @@ public class Tank extends Characters {
         print.printBlack("************************************************");
     }
 
-    public void attack(Tank tank, Creature creature) {
+    public void attack(Characters tank, Creature creature) {
         creature.setHp(getHp() - tank.getVitality() * weapon.getDamage());
     }
 
