@@ -80,7 +80,7 @@ public class Game {
         int level = 1;
         ArrayList<Enemy> enemyArrayList = new ArrayList<>();
 
-        Enemy enemy = new Enemy((sr.nextInt(5) + 1), (sr.nextInt(5) + 1), (sr.nextInt(5) + 1), sword1, armor1 , inventoryEnemy);
+        Enemy enemy = new Enemy((sr.nextInt(5) + 1), (sr.nextInt(5) + 1), (sr.nextInt(5) + 1), sword1, armor1, inventoryEnemy);
 
         for (level = 0; level <= Math.pow(2, n); level++) {
             enemyArrayList.add(enemy);
@@ -89,7 +89,7 @@ public class Game {
             }
         }
 
-        for(int u=1;u<enemyArrayList.size();u++) {
+        for (int u = 1; u < enemyArrayList.size(); u++) {
             enemyArrayList.get(u).displayMenu();
         }
 
@@ -124,7 +124,7 @@ public class Game {
                         drop = scanner.nextInt();
                         if (drop == 1)
                             fighter.pick();
-                        if (enemyArrayList.isEmpty()){
+                        if (enemyArrayList.isEmpty()) {
                             newLevel.enemiesDefeated();
                             newLevel.level();
                             enemiesAndFight();
@@ -143,7 +143,7 @@ public class Game {
                             drop = scanner.nextInt();
                             if (drop == 1)
                                 healer.pick();
-                            if (enemyArrayList.isEmpty()){
+                            if (enemyArrayList.isEmpty()) {
                                 newLevel.enemiesDefeated();
                                 newLevel.level();
                                 enemiesAndFight();
@@ -162,7 +162,7 @@ public class Game {
                                 drop = scanner.nextInt();
                                 if (drop == 1)
                                     tank.pick();
-                                if (enemyArrayList.isEmpty()){
+                                if (enemyArrayList.isEmpty()) {
                                     newLevel.enemiesDefeated();
                                     newLevel.level();
                                     enemiesAndFight();
@@ -245,7 +245,7 @@ public class Game {
                         drop = scanner.nextInt();
                         if (drop == 1)
                             fighter.pick();
-                        if (enemyArrayList.isEmpty()){
+                        if (enemyArrayList.isEmpty()) {
                             newLevel.enemiesDefeated();
                             newLevel.level();
                             enemiesAndFight();
@@ -264,7 +264,7 @@ public class Game {
                             drop = scanner.nextInt();
                             if (drop == 1)
                                 healer.pick();
-                            if (enemyArrayList.isEmpty()){
+                            if (enemyArrayList.isEmpty()) {
                                 newLevel.enemiesDefeated();
                                 newLevel.level();
                                 enemiesAndFight();
@@ -283,7 +283,7 @@ public class Game {
                                 drop = scanner.nextInt();
                                 if (drop == 1)
                                     tank.pick();
-                                if (enemyArrayList.isEmpty()){
+                                if (enemyArrayList.isEmpty()) {
                                     newLevel.enemiesDefeated();
                                     newLevel.level();
                                     enemiesAndFight();
@@ -349,7 +349,8 @@ public class Game {
                         }
                     }
                 }
-                if (choice == 3) {healer.specialAttackHeal(healer, tank, fighter, wand1);
+                if (choice == 3) {
+                    healer.specialAttackHeal(healer, tank, fighter, wand1);
                     print.printBlue("Healer uses special action");
                     print.printBlue("Healer's hp is : " + healer.getHp());
                     print.printBlue("Tank's hp is : " + tank.getHp());
@@ -369,7 +370,7 @@ public class Game {
                         drop = scanner.nextInt();
                         if (drop == 1)
                             fighter.pick();
-                        if (enemyArrayList.isEmpty()){
+                        if (enemyArrayList.isEmpty()) {
                             newLevel.enemiesDefeated();
                             newLevel.level();
                             enemiesAndFight();
@@ -388,7 +389,7 @@ public class Game {
                             drop = scanner.nextInt();
                             if (drop == 1)
                                 tank.pick();
-                            if (enemyArrayList.isEmpty()){
+                            if (enemyArrayList.isEmpty()) {
                                 newLevel.enemiesDefeated();
                                 newLevel.level();
                                 enemiesAndFight();
@@ -402,31 +403,31 @@ public class Game {
                                     if (healer.getHp() <= 0) {
                                         print.printBlue("Healer is dead.");
                                         print.printRed("""
-                                                    ┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼
-                                                    ███▀▀▀██┼███▀▀▀███┼███▀█▄█▀███┼██▀▀▀
-                                                    ██┼┼┼┼██┼██┼┼┼┼┼██┼██┼┼┼█┼┼┼██┼██┼┼┼
-                                                    ██┼┼┼▄▄▄┼██▄▄▄▄▄██┼██┼┼┼▀┼┼┼██┼██▀▀▀
-                                                    ██┼┼┼┼██┼██┼┼┼┼┼██┼██┼┼┼┼┼┼┼██┼██┼┼┼
-                                                    ███▄▄▄██┼██┼┼┼┼┼██┼██┼┼┼┼┼┼┼██┼██▄▄▄
-                                                    ┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼
-                                                    ███▀▀▀███┼▀███┼┼██▀┼██▀▀▀┼██▀▀▀▀██▄┼
-                                                    ██┼┼┼┼┼██┼┼┼██┼┼██┼┼██┼┼┼┼██┼┼┼┼┼██┼
-                                                    ██┼┼┼┼┼██┼┼┼██┼┼██┼┼██▀▀▀┼██▄▄▄▄▄▀▀┼
-                                                    ██┼┼┼┼┼██┼┼┼██┼┼█▀┼┼██┼┼┼┼██┼┼┼┼┼██┼
-                                                    ███▄▄▄███┼┼┼─▀█▀┼┼─┼██▄▄▄┼██┼┼┼┼┼██▄
-                                                    ┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼
-                                                    ┼┼┼┼┼┼┼┼██┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼██┼┼┼┼┼┼┼┼┼
-                                                    ┼┼┼┼┼┼████▄┼┼┼▄▄▄▄▄▄▄┼┼┼▄████┼┼┼┼┼┼┼
-                                                    ┼┼┼┼┼┼┼┼┼▀▀█▄█████████▄█▀▀┼┼┼┼┼┼┼┼┼┼
-                                                    ┼┼┼┼┼┼┼┼┼┼┼█████████████┼┼┼┼┼┼┼┼┼┼┼┼
-                                                    ┼┼┼┼┼┼┼┼┼┼┼██▀▀▀███▀▀▀██┼┼┼┼┼┼┼┼┼┼┼┼
-                                                    ┼┼┼┼┼┼┼┼┼┼┼██┼┼┼███┼┼┼██┼┼┼┼┼┼┼┼┼┼┼┼
-                                                    ┼┼┼┼┼┼┼┼┼┼┼█████▀▄▀█████┼┼┼┼┼┼┼┼┼┼┼┼
-                                                    ┼┼┼┼┼┼┼┼┼┼┼┼███████████┼┼┼┼┼┼┼┼┼┼┼┼┼
-                                                    ┼┼┼┼┼┼┼┼▄▄▄██┼┼█▀█▀█┼┼██▄▄▄┼┼┼┼┼┼┼┼┼
-                                                    ┼┼┼┼┼┼┼┼▀▀██┼┼┼┼┼┼┼┼┼┼┼██▀▀┼┼┼┼┼┼┼┼┼
-                                                    ┼┼┼┼┼┼┼┼┼┼▀▀┼┼┼┼┼┼┼┼┼┼┼▀▀┼┼┼┼┼┼┼┼┼┼┼
-                                                    ┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼""");
+                                                ┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼
+                                                ███▀▀▀██┼███▀▀▀███┼███▀█▄█▀███┼██▀▀▀
+                                                ██┼┼┼┼██┼██┼┼┼┼┼██┼██┼┼┼█┼┼┼██┼██┼┼┼
+                                                ██┼┼┼▄▄▄┼██▄▄▄▄▄██┼██┼┼┼▀┼┼┼██┼██▀▀▀
+                                                ██┼┼┼┼██┼██┼┼┼┼┼██┼██┼┼┼┼┼┼┼██┼██┼┼┼
+                                                ███▄▄▄██┼██┼┼┼┼┼██┼██┼┼┼┼┼┼┼██┼██▄▄▄
+                                                ┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼
+                                                ███▀▀▀███┼▀███┼┼██▀┼██▀▀▀┼██▀▀▀▀██▄┼
+                                                ██┼┼┼┼┼██┼┼┼██┼┼██┼┼██┼┼┼┼██┼┼┼┼┼██┼
+                                                ██┼┼┼┼┼██┼┼┼██┼┼██┼┼██▀▀▀┼██▄▄▄▄▄▀▀┼
+                                                ██┼┼┼┼┼██┼┼┼██┼┼█▀┼┼██┼┼┼┼██┼┼┼┼┼██┼
+                                                ███▄▄▄███┼┼┼─▀█▀┼┼─┼██▄▄▄┼██┼┼┼┼┼██▄
+                                                ┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼
+                                                ┼┼┼┼┼┼┼┼██┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼██┼┼┼┼┼┼┼┼┼
+                                                ┼┼┼┼┼┼████▄┼┼┼▄▄▄▄▄▄▄┼┼┼▄████┼┼┼┼┼┼┼
+                                                ┼┼┼┼┼┼┼┼┼▀▀█▄█████████▄█▀▀┼┼┼┼┼┼┼┼┼┼
+                                                ┼┼┼┼┼┼┼┼┼┼┼█████████████┼┼┼┼┼┼┼┼┼┼┼┼
+                                                ┼┼┼┼┼┼┼┼┼┼┼██▀▀▀███▀▀▀██┼┼┼┼┼┼┼┼┼┼┼┼
+                                                ┼┼┼┼┼┼┼┼┼┼┼██┼┼┼███┼┼┼██┼┼┼┼┼┼┼┼┼┼┼┼
+                                                ┼┼┼┼┼┼┼┼┼┼┼█████▀▄▀█████┼┼┼┼┼┼┼┼┼┼┼┼
+                                                ┼┼┼┼┼┼┼┼┼┼┼┼███████████┼┼┼┼┼┼┼┼┼┼┼┼┼
+                                                ┼┼┼┼┼┼┼┼▄▄▄██┼┼█▀█▀█┼┼██▄▄▄┼┼┼┼┼┼┼┼┼
+                                                ┼┼┼┼┼┼┼┼▀▀██┼┼┼┼┼┼┼┼┼┼┼██▀▀┼┼┼┼┼┼┼┼┼
+                                                ┼┼┼┼┼┼┼┼┼┼▀▀┼┼┼┼┼┼┼┼┼┼┼▀▀┼┼┼┼┼┼┼┼┼┼┼
+                                                ┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼""");
                                         newLevel.defeated();
                                         play = false;
                                     } else {
@@ -470,7 +471,7 @@ public class Game {
                         drop = scanner.nextInt();
                         if (drop == 1)
                             fighter.pick();
-                        if (enemyArrayList.isEmpty()){
+                        if (enemyArrayList.isEmpty()) {
                             newLevel.enemiesDefeated();
                             newLevel.level();
                             enemiesAndFight();
@@ -489,7 +490,7 @@ public class Game {
                             drop = scanner.nextInt();
                             if (drop == 1)
                                 healer.pick();
-                            if (enemyArrayList.isEmpty()){
+                            if (enemyArrayList.isEmpty()) {
                                 newLevel.enemiesDefeated();
                                 newLevel.level();
                                 enemiesAndFight();
