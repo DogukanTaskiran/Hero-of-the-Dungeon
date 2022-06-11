@@ -25,4 +25,14 @@ public abstract class Characters extends Creature {
     public abstract void pick();
 
     public abstract void examine();
+
+    public void specialAttackHeavyAttack(Characters fighter, Sword sword, Creature creature) {
+        creature.setHp((getHp() - fighter.getStrength() * sword.getDamage()) - 7);
+        fighter.setHp(fighter.getHp() - 5);
+    }
+    public void specialAttackHeal(Characters healer, Characters tank, Characters fighter, Wand wand) {
+        tank.setHp(wand.getHeal() + tank.getHp());
+        fighter.setHp(wand.getHeal() + fighter.getHp());
+        healer.setHp(wand.getHeal() + healer.getHp());
+    }
 }

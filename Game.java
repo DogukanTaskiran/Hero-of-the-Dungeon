@@ -36,9 +36,9 @@ public class Game {
     ArrayList<Items> inventoryFighter = new ArrayList<>();
     ArrayList<Items> inventoryEnemy = new ArrayList<>();
 
-    Tank tank = new Tank(sr.nextInt(5) + 1, sr.nextInt(5) + 6, sr.nextInt(5) + 3, sword1, armor1, inventoryTank);
-    Healer healer = new Healer(sr.nextInt(5) + 3, sr.nextInt(5) + 1, sr.nextInt(5) + 6, sword1, armor1, inventoryHealer);
-    Fighter fighter = new Fighter(sr.nextInt(5) + 6, sr.nextInt(5) + 1, sr.nextInt(5) + 1, sword1, armor1, inventoryFighter);
+    Characters tank = new Tank(sr.nextInt(5) + 1, sr.nextInt(5) + 6, sr.nextInt(5) + 3, sword1, armor1, inventoryTank);
+    Characters healer = new Healer(sr.nextInt(5) + 3, sr.nextInt(5) + 1, sr.nextInt(5) + 6, sword1, armor1, inventoryHealer);
+    Characters fighter = new Fighter(sr.nextInt(5) + 6, sr.nextInt(5) + 1, sr.nextInt(5) + 1, sword1, armor1, inventoryFighter);
     Creature enemy = new Enemy(sr.nextInt(4) + 1, sr.nextInt(4) + 1, sr.nextInt(4) + 1, sword1, armor1, inventoryEnemy);
 
 

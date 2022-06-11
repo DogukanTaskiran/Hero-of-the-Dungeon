@@ -38,7 +38,7 @@ public class Fighter extends Characters {
         creature.setHp(getHp() - fighter.getStrength() * weapon.getDamage());
     }
 
-    public void specialAttackHeavyAttack(Fighter fighter, Sword sword, Creature creature) {
+    public void specialAttackHeavyAttack(Characters fighter, Sword sword, Creature creature) {
         creature.setHp((getHp() - fighter.getStrength() * weapon.getDamage()) - 7);
         fighter.setHp(fighter.getHp() - 5);
     }
