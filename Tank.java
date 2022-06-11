@@ -1,31 +1,68 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Tank extends Creature {
+public class Tank extends Characters {
+
+    Scanner input=new Scanner(System.in);
+    Weapon weapon = new Weapon();
+    Armor armor = new Armor();
+    Print print = new Print();
+    public int choose;
 
     public Tank() {
-        super("Tank");
+
     }
 
-    @Override
+    public Tank(double strength, double vitality, double intelligence, Weapon weapon, Armor armor, ArrayList<Items> inventory) {
+        super.setStrength(strength);
+        super.setVitality(vitality);
+        super.setIntelligence(intelligence);
+        super.setWeapon(weapon);
+        super.setArmor(armor);
+        super.setInventory(inventory);
+    }
+
     public void displayMenu() {
-        super.displayMenu();
+        print.printYellow("Strength of " + getClass() + " is : " + getStrength());
+        print.printYellow("Vitality of " + getClass() + " is : " + getVitality());
+        print.printYellow("Intelligence of " + getClass() + " is : " + getIntelligence());
+        print.printYellow("HP of " + getClass() + " is : " + Math.round(0.7 * getVitality() + 0.2 * getStrength() + 0.1 * getIntelligence()) + "\n");
+        print.printYellow("⇓ Weapon stats ⇓");
+        super.getWeapon().itemInfo();
+        print.printYellow("\n⇓ Armor stats ⇓");
+        super.getArmor().itemInfo();
+        print.printBlack("************************************************");
+    }
+
+    public void attack(Tank tank, Creature creature) {
+        creature.setHp(getHp() - tank.getVitality() * weapon.getDamage());
+    }
+    @Override
+    public void pick(){
+        getInventory().add(weapon);
+        getInventory().add(armor);
     }
 
     @Override
-    public void attack() {
-        super.attack();
+    public void wield(Weapon weapon){
+        super.wield(weapon);
+        System.out.println("Choose a weapon to equip.");
+        choose=input.nextInt();
+        setWeapon((Weapon) getInventory().get(choose));
+        super.getWeapon().itemInfo();
     }
 
-    public void ability() {
-        print.printYellow("Casting " + getCharacterType() + " on " + getTarget().getName());
-        print.printYellow(getTarget().getName() + " is stunned");
-        getTarget().setHp(getTarget().getHp() - 10);
-        ;
-        print.printYellow(getCharacterType() + " damage " + (10) + " for " + getTarget().getName());
-        if (getTarget().getHp() <= 0) {
-            print.printYellow("Current health of " + getTarget().getName() + " is " + 0);
-        } else {
-            print.printYellow("Current health of " + getTarget().getName() + " is " + getTarget().getHp());
-        }
+    @Override
+    public void wear(Armor armor){
+        super.wear(armor);
+        System.out.println("Choose an armor to equip.");
+        choose=input.nextInt();
+        setArmor((Armor) getInventory().get(choose));
+        super.getArmor().itemInfo();
+    }
+
+    @Override
+    public void examine(){
+        System.out.println(getInventory());
     }
 }

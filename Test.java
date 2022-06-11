@@ -3,11 +3,12 @@ public class Test {
     public static void main(String[] args) {
 
         Game game = new Game();
+        Level level = new Level();
 
-        game.characters();
         game.login();
-        game.enemy();
-        game.battle();
+        game.characters();
+        level.level();
+        game.enemiesAndFight();
 
     }
 }

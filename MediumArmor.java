@@ -1,7 +1,7 @@
 public class MediumArmor extends Armor {
 
-    public MediumArmor(String name, String type, double weight, double value) {
-        super(name, type, weight, value);
+    public MediumArmor(String name, double value, double weight, double damage, double resistance) {
+        super(name, value, weight, damage, resistance);
     }
 
     @Override
